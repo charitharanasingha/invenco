@@ -33,7 +33,7 @@ $ npm run test:cov
 # lint run
 $ npm run lint
 
-# lint run with
+# lint run with fix
 $ npm run lint --fix
 ```
 
