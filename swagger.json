@@ -1,0 +1,253 @@
+{
+  "components": {
+    "examples": {},
+    "headers": {},
+    "parameters": {},
+    "requestBodies": {},
+    "responses": {},
+    "schemas": {
+      "User": {
+        "properties": {
+          "email": {
+            "required": true,
+            "format": "email",
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": ["email", "password"],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "Employee": {
+        "properties": {
+          "first_name": {
+            "required": true,
+            "type": "string"
+          },
+          "last_name": {
+            "required": true,
+            "type": "string"
+          },
+          "age": {
+            "required": true,
+            "type": "number"
+          }
+        },
+        "required": ["first_name", "last_name", "age"],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "UpdateEmployee": {
+        "properties": {
+          "id": {
+            "required": true,
+            "type": "integer"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "age": {
+            "type": "number"
+          }
+        },
+        "required": ["id"],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  },
+  "info": {
+    "title": "Invenco Test Swagger Documentation",
+    "version": "1.0.0",
+    "license": {
+      "name": "ISC"
+    },
+    "contact": {}
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/api/auth/login": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Endpoint to generate the Access Token",
+
+        "operationId": "AuthUser",
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "security": [],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/signup": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Endpoint to create a new auth user",
+        "operationId": "SignupUser",
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "security": [],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/employees": {
+      "get": {
+        "tags": ["Employee"],
+        "summary": "Endpoint to get all the employees",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Access-Token",
+            "schema": { "type": "string", "required": true }
+          }
+        ],
+        "operationId": "GetEmployees",
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Employee"],
+        "summary": "Endpoint to create an employee",
+
+        "operationId": "CreateEmployee",
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "security": [],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Access-Token",
+            "schema": { "type": "string", "required": true }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Employee"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Employee"],
+        "summary": "Endpoint to update an employee",
+
+        "operationId": "UpdateEmployee",
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "security": [],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Access-Token",
+            "schema": { "type": "string", "required": true }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateEmployee"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/employees/{id}": {
+      "get": {
+        "tags": ["Employee"],
+        "summary": "Endpoint to get all the employees",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Access-Token",
+            "schema": { "type": "string", "required": true }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "schema": { "type": "integer", "required": true }
+          }
+        ],
+        "operationId": "GetEmployeeById",
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Employee"],
+        "summary": "Endpoint to delete an employee",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Access-Token",
+            "schema": { "type": "string", "required": true }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "schema": { "type": "integer", "required": true }
+          }
+        ],
+        "operationId": "DeleteEmployee",
+        "responses": {
+          "200": {
+            "description": "Ok"
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ]
+}

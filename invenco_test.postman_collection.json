@@ -1,0 +1,176 @@
+{
+  "info": {
+    "_postman_id": "7794db85-2ac2-4bcc-8032-bef48173f148",
+    "name": "Invenco Test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login Request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\":\"john@doe.com\",\n    \"password\":\"123\"\n\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/api/auth/login",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "auth", "login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Sign Up Request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"newuser@new.com\",\n    \"password\":\"123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/api/auth/signup",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "auth", "signup"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Employees",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Access-Token",
+            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImp0aSI6Ijg3NGNiNTUxLWVlODktNDEzYS05MDFmLWU2MzYyYjNmM2Q1ZiIsImlhdCI6MTY3MDI4MjE3OSwiZXhwIjoxNjcwODg2OTc5fQ.nTkknCVHj0lWECIX43Hp4D2GKrvZwBP-Vb8TrpJdT2A",
+            "type": "default"
+          }
+        ],
+        "url": {
+          "raw": "localhost:3000/api/employees",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "employees"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Employee By Id",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Access-Token",
+            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImp0aSI6IjQ5NWRkYzI3LTUxYTUtNDkxZC1iMDMyLTA3NDRmNzA2NmZhMSIsImlhdCI6MTY3MDI4OTQ4MCwiZXhwIjoxNjcwODk0MjgwfQ.X-wL92mXV47B6ObpwhkpepXhFEt8H0NoYEp0Lxt1UjA",
+            "type": "default"
+          }
+        ],
+        "url": {
+          "raw": "localhost:3000/api/employees/1",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "employees", "1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Insert New Employee",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Access-Token",
+            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImp0aSI6IjQ5NWRkYzI3LTUxYTUtNDkxZC1iMDMyLTA3NDRmNzA2NmZhMSIsImlhdCI6MTY3MDI4OTQ4MCwiZXhwIjoxNjcwODk0MjgwfQ.X-wL92mXV47B6ObpwhkpepXhFEt8H0NoYEp0Lxt1UjA",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"first_name\": \"Mike\",\n    \"last_name\":\"Tyson\",\n    \"age\":\"45\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/api/employees",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "employees"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Employee",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Access-Token",
+            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImp0aSI6IjQ5NWRkYzI3LTUxYTUtNDkxZC1iMDMyLTA3NDRmNzA2NmZhMSIsImlhdCI6MTY3MDI4OTQ4MCwiZXhwIjoxNjcwODk0MjgwfQ.X-wL92mXV47B6ObpwhkpepXhFEt8H0NoYEp0Lxt1UjA",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\" : 3,\n    \"first_name\":\"Updated first name\",\n    \"last_name\":\"Updated last name\",\n    \"age\":\"45\"\n\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/api/employees",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "employees"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Employee",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Access-Token",
+            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImp0aSI6IjQ5NWRkYzI3LTUxYTUtNDkxZC1iMDMyLTA3NDRmNzA2NmZhMSIsImlhdCI6MTY3MDI4OTQ4MCwiZXhwIjoxNjcwODk0MjgwfQ.X-wL92mXV47B6ObpwhkpepXhFEt8H0NoYEp0Lxt1UjA",
+            "type": "default"
+          }
+        ],
+        "url": {
+          "raw": "localhost:3000/api/employees/ewfsdfd",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "employees", "ewfsdfd"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
