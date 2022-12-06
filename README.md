@@ -164,8 +164,9 @@ curl --location --request DELETE 'localhost:3000/api/employees/ewfsdfd' \
 
 ## Swagger Documentation
 
-<a href="invenco_test.postman_collection" target="_blank" download>http://localhost:3000/docs</a>
+<a href="http://localhost:3000/docs" target="_blank" download>http://localhost:3000/docs</a>
 
 ## Download the postman script for all the scenarios
 
-<a href="http://localhost:3000/docs" target="_blank" download>Click to Download</a>
+<a href="invenco_test.postman_collection.json" target="_blank" download>Click to Download</a>
+
