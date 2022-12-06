@@ -170,3 +170,11 @@ curl --location --request DELETE 'localhost:3000/api/employees/ewfsdfd' \
 
 <a href="invenco_test.postman_collection.json" target="_blank" download>Click to Download</a>
 
+## Future Improvements
+
+```bash
+* Dockerizing
+* CI & CD Implementation
+* Backend pagination support
+```
+
