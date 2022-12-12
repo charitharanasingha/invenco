@@ -174,6 +174,8 @@ curl --location --request DELETE 'localhost:3000/api/employees/ewfsdfd' \
 
 ```bash
 * Dockerizing
+* JOI Validation
+* Using an ORM like Sequelize instead raw queries
 * CI & CD Implementation
 * Backend pagination support
 ```
