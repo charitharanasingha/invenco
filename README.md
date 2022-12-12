@@ -177,6 +177,7 @@ curl --location --request DELETE 'localhost:3000/api/employees/ewfsdfd' \
 * JOI Validation
 * Using an ORM like Sequelize instead raw queries
 * CI & CD Implementation
+* Automated Swagger Documentation generating using tsoa
 * Backend pagination support
 ```
 
